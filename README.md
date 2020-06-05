@@ -8,7 +8,7 @@ This mini tool aims to break down the whole functionality of an Atem Switcher fo
 
 Actually it can be quite challenging to teach a loan the usage of a switcher so he can use it  just for a few events, especially if you self are not an expert in this field. To simplify the training and the operation itself this tool aims to simplify the GUI shown in the next picture which is possible because in our case actually only a small subset of the features is used.
 
-![Preview](images/Switcher Control.jpg)
+![Preview](images/SwitcherControl.jpg)
 
 The result are just five buttons that enable the operator to switch smoothly between full shot, medium shot and presentation. Which are are three different input sources in first place.  The resulting GUI is shown in the next picture.
 
