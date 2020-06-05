@@ -1,0 +1,67 @@
+﻿<Window x:Class="SimpleCut.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:SimpleCut.Views"
+        mc:Ignorable="d"
+        Title="SimpleCut"
+        Height="500"
+        Width="420">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Window.Style>
+        <Style TargetType="Window"
+               BasedOn="{StaticResource {x:Type Window}}" />
+    </Window.Style>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0"
+                HorizontalAlignment="Left"
+                BorderBrush="Gray"
+                BorderThickness="2">
+            <views:ProgramSelect x:Name="ControlProgramm"
+                                 IsEnabled="{Binding ViewSelectFieldEnable}"
+                                 DataContext="{Binding ProgramSelectModelContext}"
+                                 Margin="0,2,0,-2"/>
+        </Border>
+
+        <Expander Grid.Column="1"
+                  Name="ControlBar"
+                  VerticalAlignment="Stretch"
+                  IsExpanded="{Binding ExpandedConfigView}"
+                  Expanded="ControlBar_Expanded"
+                  Collapsed="ControlBar_Collapsed"
+                  ExpandDirection="Left"
+                  >
+            <Border Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    MaxWidth="370"
+                    MinWidth="320"
+                    BorderBrush="Gray"
+                    BorderThickness="2"
+                    >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <views:DeviceConnect Grid.Row="0"
+                                         Margin="8"
+                                         x:Name="ControlConnect"
+                                         DataContext="{Binding DeviceConnectionContext}" />
+                    <views:SwitchProperties Grid.Row="1"
+                                            Margin="8"
+                                            x:Name="ControlProperties"
+                                            IsEnabled="{Binding PropertieFiledEnabled}"
+                                            DataContext="{Binding SwitchPropertiesContext}" />
+                </Grid>
+            </Border>
+        </Expander>
+    </Grid>
+</Window>
